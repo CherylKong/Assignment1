@@ -5,15 +5,20 @@
     justify-content: center;
     align-items: center; 
 }
-
+main{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
 .notes
 {
     background-color: #afadad;
+    grid-column: 1/2;
 }
 
 .new_note
 {
    background-color: #eae6e6; 
+   grid-column: 2/3;
 }
 
 .button1, .button3
@@ -43,5 +48,13 @@
 }
 .footer
 {
+    display: flex; 
+    flex-direction: column;  
     background-color: #d9adad;
+}
+img.footer
+{
+    display: grid; 
+    grid-template-columns: 1px,1px;
+
 }
