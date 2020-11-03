@@ -94,13 +94,11 @@ div.new_note
 {
     background-color: white;
     font-size: 100%;
-    padding: 0.5em;
     border-radius: 0.5rem;
     display: flex;
-    height: 60%;
-    width:60%;
+    height: 70.47%;
+    width: 85%;
     position: absolute;
-    margin:1rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)
