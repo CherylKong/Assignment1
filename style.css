@@ -18,6 +18,7 @@ body{
     background-color: #9d8181;
     justify-content: center;
     align-items: center; 
+    font-size: 110%;
 }
 
 main
@@ -33,6 +34,8 @@ main
     background-color: #afadad;
     grid-column: 1/2;
     height: 100%;
+    position: relative;
+    margin: 0.5em 0;
 }
 div.new_note
 {
@@ -40,7 +43,9 @@ div.new_note
     grid-column: 2/3;
     position: relative;
     height: 100%;
-
+    
+    margin: 0.5em 0;
+    margin-left: 0.5em;
 }
 
 .button1, .button3
@@ -49,7 +54,8 @@ div.new_note
     color: white;
     display: inline-flex;
     font-size: 0.5rem;
-    padding: 0.5rem;
+    padding:0.5rem;
+    margin:1rem;
     border-radius: 0.5rem;
 }
 
@@ -60,7 +66,8 @@ div.new_note
     display: inline-flex;
     float:right;
     font-size: 0.5rem;
-    padding: 0.5rem;
+    padding:0.5rem;
+    margin:1rem;
     border-radius: 0.5rem;
 }
 
@@ -69,8 +76,12 @@ div.new_note
     background-color: #ec524b;
     color: white;
     display: inline-flex;
+    position: absolute;
+    bottom:0;
+    left:50%;
     font-size: 0.5rem;
-    padding: 0.5rem;
+    padding:0.5rem;
+    margin:1rem;
     border-radius: 0.5rem;
 }
 
@@ -80,6 +91,23 @@ div.new_note
     font-size: 0.5rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
+    display: flex;
+    height: 60%;
+    width:60%;
+    position: absolute;
+    margin:1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+
+
+}
+
+.button3
+{
+    position: absolute;
+    bottom:0;
+    right:50%;
 }
 
 footer
@@ -88,6 +116,7 @@ footer
     background-color: #d9adad;
     height: 100%;
     text-align: center;
+    margin: 1rem 0;
     
 }
 p.footer
