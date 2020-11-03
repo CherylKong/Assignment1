@@ -1,34 +1,46 @@
 html
 {
-    height: 100vh;
+    height: 100%;
     padding:0;
 }
 body{
-    min-height:100vh;
+    min-height:100%;
     padding:0;
     display: grid;
-    grid-template-rows: 10% 80% 10%;
+    grid-template-rows: 10% 75% 15%;
 }
 
 .heading
 {   
     display: flex;
     margin: 0%;
+    height: 100%;
     background-color: #9d8181;
     justify-content: center;
     align-items: center; 
-    flex: 4 0 100%
 }
 
+main
+{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+
+}
 .notes
 {
     background-color: #afadad;
-    margin-top: 1rem;
+    grid-column: 1/2;
+    height: 100%;
 }
-
 div.new_note
 {
-   background-color: #eae6e6;
+    background-color: #eae6e6;
+    grid-column: 2/3;
+    position: relative;
+    height: 100%;
+
 }
 
 .button1, .button3
@@ -70,9 +82,20 @@ div.new_note
     border-radius: 0.5rem;
 }
 
-.footer
+footer
 {
-    display: flex; 
-    flex-direction: column;  
+    display: grid;  
     background-color: #d9adad;
+    height: 100%;
+    text-align: center;
+    
+}
+p.footer
+{
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+p + footer
+{
+    grid-row: 2/3;
 }
