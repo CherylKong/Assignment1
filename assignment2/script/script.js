@@ -87,3 +87,8 @@ function make_textarea_visible()
     cancel_btn.addEventListener('click', hide_textarea)
 }
 new_note_btn.addEventListener('click', make_textarea_visible)
+
+let note1 = {title:"note one", body:"some text 1"} 
+let note2 = {title:"note two", body:"some text 2"} 
+let note_content = [note1, note2]
+
