@@ -81,14 +81,32 @@ cancel_btn.addEventListener('click', hide_textarea)
 function make_textarea_visible()
 {
     text_area.style.visibility='visible'
-    text_area.value = 'Add new note......'
+    text_area.value = 'Add some note......'
     save_btn.style.visibility='visible'
     cancel_btn.style.visibility='visible'
     cancel_btn.addEventListener('click', hide_textarea)
 }
 new_note_btn.addEventListener('click', make_textarea_visible)
 
+
 let note1 = {title:"note one", body:"some text 1"} 
 let note2 = {title:"note two", body:"some text 2"} 
+let note_list = document.querySelector('.noteArray')
 let note_content = [note1, note2]
 
+function add_to_note_content()
+{
+    let lines = text_area.value.split('\n')
+    let note_title = document.createElement('li')
+    let note_body = []
+    note_title.textContent = lines[0]
+    for (let line =1; line < lines.length; line++)
+    {
+        note_body.push(line)
+    }
+    let new_note = {title: note_title, body: note_body}
+    note_content.push(new_note)
+    note_list.appendChild(note_title)
+}
+
+save_btn.addEventListener('click', add_to_note_content)
