@@ -1,9 +1,8 @@
-let dark_theme_btn = document.querySelector('.button2')
 let side_note = document.querySelector('.notes')
 let new_note = document.querySelector('.new_note')
 let text_area = document.querySelector('.contain')
-let new_notes = document.querySelector('.button1')
 let new_note_btn = document.querySelector('.button1')
+let dark_theme_btn = document.querySelector('.button2')
 let save_btn = document.querySelector('.button3')
 let cancel_btn = document.querySelector('.button4')
 
@@ -17,7 +16,6 @@ function change_dark_theme()
     variable.push(side_note)
     variable.push(new_note)
     variable.push(text_area)
-    variable.push(new_notes)
     variable.push(new_note_btn)
 
     let text = change_theme_text(dark_theme_btn)
