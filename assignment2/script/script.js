@@ -7,23 +7,16 @@ function change_dark_theme()
 
     let side_note = document.querySelector('.notes')
     variable.push(side_note)
-    // side_note.style.backgroundColor = '#707070'
-    // change_font_color_to_white(side_note)
 
     let new_note = document.querySelector('.new_note')
     variable.push(new_note)
-    // new_note.style.backgroundColor = '#c9c1c1'
-    // change_font_color_to_white(new_note)
 
     let text_area = document.querySelector('.contain')
     variable.push(text_area)
-    // text_area.style.backgroundColor = 'black'
 
     let button1 = document.querySelector('.button1')
     variable.push(button1)
-    // button1.style.backgroundColor = 'green'
 
-    // dark_theme.style.backgroundColor = '#393e46'
     let button2 = document.querySelector('.button2')
     let text = change_theme_text(button2)
     dark_theme.textContent = text
@@ -31,11 +24,10 @@ function change_dark_theme()
 
     let button3 = document.querySelector('.button3')
     variable.push(button3)
-    // button3.style.backgroundColor = 'green'
 
     let button4 = document.querySelector('.button4')
     variable.push(button4)
-    // button4.style.backgroundColor = 'red'
+
     change_theme(text, variable)
 }
 
