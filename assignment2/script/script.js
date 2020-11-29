@@ -1,32 +1,28 @@
-let dark_theme = document.querySelector('.theme')
+let dark_theme_btn = document.querySelector('.button2')
+let side_note = document.querySelector('.notes')
+let new_note = document.querySelector('.new_note')
+let text_area = document.querySelector('.contain')
+let new_note_btn = document.querySelector('.button1')
+let save_btn = document.querySelector('.button3')
+let cancel_btn = document.querySelector('.button4')
+
 let dark_theme_color = ['#707070', '#c9c1c1', 'black', 'green','#393e46', 'green','red']
 let light_theme_color = ['#afadad', '#eae6e6','white', '#8db596','#707070', '#8db596', '#ec524b'] 
+
 function change_dark_theme()
 {
     let variable = []
 
-    let side_note = document.querySelector('.notes')
     variable.push(side_note)
-
-    let new_note = document.querySelector('.new_note')
     variable.push(new_note)
-
-    let text_area = document.querySelector('.contain')
     variable.push(text_area)
+    variable.push(new_note_btn)
 
-    let button1 = document.querySelector('.button1')
-    variable.push(button1)
-
-    let button2 = document.querySelector('.button2')
-    let text = change_theme_text(button2)
-    dark_theme.textContent = text
-    variable.push(dark_theme)
-
-    let button3 = document.querySelector('.button3')
-    variable.push(button3)
-
-    let button4 = document.querySelector('.button4')
-    variable.push(button4)
+    let text = change_theme_text(dark_theme_btn)
+    dark_theme_btn.textContent = text
+    variable.push(dark_theme_btn)
+    variable.push(save_btn)
+    variable.push(cancel_btn)
 
     change_theme(text, variable)
 }
@@ -64,12 +60,30 @@ function change_theme(text,variable)
         }
     
     }
-    dark_theme.addEventListener('click',change_dark_theme)
+    dark_theme_btn.addEventListener('click',change_dark_theme)
 }
 function change_font_color_to_white(posiiton, color)
 {
     posiiton.style.color = color
 }
 
-dark_theme.addEventListener('click',change_dark_theme)
+dark_theme_btn.addEventListener('click',change_dark_theme)
 
+function hide_textarea()
+{
+    text_area.style.visibility='hidden'
+    save_btn.style.visibility='hidden'
+    cancel_btn.style.visibility='hidden'
+    new_note_btn.addEventListener('click', make_textarea_visible)
+}
+cancel_btn.addEventListener('click', hide_textarea)
+
+function make_textarea_visible()
+{
+    text_area.style.visibility='visible'
+    text_area.value = 'Add new note......'
+    save_btn.style.visibility='visible'
+    cancel_btn.style.visibility='visible'
+    cancel_btn.addEventListener('click', hide_textarea)
+}
+new_note_btn.addEventListener('click', make_textarea_visible)
