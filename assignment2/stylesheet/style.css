@@ -1,0 +1,134 @@
+html
+{
+    height: 100%;
+    padding:0;
+}
+body{
+    min-height:100%;
+    padding:0;
+    display: grid;
+    grid-template-rows: 10% 75% 15%;
+}
+
+.heading
+{   
+    display: flex;
+    margin: 0%;
+    height: 100%;
+    background-color: #9d8181;
+    justify-content: center;
+    align-items: center; 
+    font-size: 130%;
+}
+
+main
+{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+
+}
+
+.notes
+{
+    background-color: #afadad;
+    grid-column: 1/2;
+    height: 100%;
+    position: relative;
+    margin: 0.5em 0;
+    padding-left:1rem;
+}
+
+div.new_note
+{
+    background-color: #eae6e6;
+    grid-column: 2/3;
+    position: relative;
+    height: 100%;
+    margin: 0.5em 0;
+    margin-left: 0.5em;
+}
+
+.button1, .button3
+{
+    background-color: #8db596;
+    color: white;
+    display: inline-flex;
+    font-size: 0.5rem;
+    padding:0.5rem;
+    margin:1rem;
+    border-radius: 0.5rem;
+    font-size: 70%;
+}
+
+.button2
+{
+    background-color: #707070;
+    color: white;
+    display: inline-flex;
+    float:right;
+    font-size: 0.5rem;
+    padding:0.5rem;
+    margin:1rem;
+    border-radius: 0.5rem;
+    font-size: 70%;
+}
+
+.button4
+{
+    background-color: #ec524b;
+    color: white;
+    display: inline-flex;
+    position: absolute;
+    bottom:0;
+    left:50%;
+    font-size: 0.5rem;
+    padding:0.5rem;
+    margin:1rem;
+    border-radius: 0.5rem;
+    font-size: 70%;
+}
+
+.contain
+{
+    background-color: white;
+    font-size: 100%;
+    border-radius: 0.5rem;
+    display: flex;
+    height: 70.47%;
+    width: 85%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+div.contain p
+{
+    padding-left:1rem;
+}
+.button3
+{
+    position: absolute;
+    bottom:0;
+    right:50%;
+}
+
+footer
+{
+    display: grid;  
+    background-color: #d9adad;
+    height: 100%;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 110%;
+}
+p.footer
+{
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+p + footer
+{
+    grid-row: 2/3;
+}
