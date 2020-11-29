@@ -1,6 +1,6 @@
 html
 {
-    height: 100%;
+    height: 100vh;
     padding:0;
 }
 body{
@@ -18,7 +18,6 @@ body{
     background-color: #9d8181;
     justify-content: center;
     align-items: center; 
-    font-size: 130%;
 }
 
 main
@@ -50,50 +49,38 @@ div.new_note
     margin-left: 0.5em;
 }
 
-.button1, .button3
-{
-    background-color: #8db596;
+.button {
     color: white;
-    display: inline-flex;
+    display: inline-flexbox;
     font-size: 0.5rem;
     padding:0.5rem;
     margin:1rem;
     border-radius: 0.5rem;
     font-size: 70%;
+}
+
+.button1, .button3
+{
+    background-color: #8db596;
 }
 
 .button2
 {
     background-color: #707070;
-    color: white;
-    display: inline-flex;
-    float:right;
-    font-size: 0.5rem;
-    padding:0.5rem;
-    margin:1rem;
-    border-radius: 0.5rem;
-    font-size: 70%;
+    float: right;
 }
 
 .button4
 {
     background-color: #ec524b;
-    color: white;
-    display: inline-flex;
     position: absolute;
     bottom:0;
     left:50%;
-    font-size: 0.5rem;
-    padding:0.5rem;
-    margin:1rem;
-    border-radius: 0.5rem;
-    font-size: 70%;
 }
 
 .contain
 {
     background-color: white;
-    font-size: 100%;
     border-radius: 0.5rem;
     display: flex;
     height: 70.47%;
@@ -103,10 +90,7 @@ div.new_note
     left: 50%;
     transform: translate(-50%, -50%)
 }
-div.contain p
-{
-    padding-left:1rem;
-}
+
 .button3
 {
     position: absolute;
