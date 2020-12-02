@@ -110,7 +110,10 @@ function add_to_note_content()
     note_title.textContent = lines[0]
     for (let line =1; line < lines.length; line++)
     {
-        note_body.push(line)
+        obj =lines[line];
+        note_body.push(obj);
+        console.log(note_body) 
+        
     }
     let new_note = {title: note_title, body: note_body}
     note_content.push(new_note)
