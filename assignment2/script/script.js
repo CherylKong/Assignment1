@@ -1,8 +1,8 @@
-let dark_theme_btn = document.querySelector('.button2')
 let side_note = document.querySelector('.notes')
 let new_note = document.querySelector('.new_note')
 let text_area = document.querySelector('.contain')
 let new_note_btn = document.querySelector('.button1')
+let dark_theme_btn = document.querySelector('.button2')
 let save_btn = document.querySelector('.button3')
 let cancel_btn = document.querySelector('.button4')
 
@@ -74,6 +74,14 @@ function hide_textarea()
     text_area.style.visibility='hidden'
     save_btn.style.visibility='hidden'
     cancel_btn.style.visibility='hidden'
+}
+cancel_btn.addEventListener('click', hide_textarea)
+
+function hide_textarea()
+{
+    text_area.style.visibility='hidden'
+    save_btn.style.visibility='hidden'
+    cancel_btn.style.visibility='hidden'
     new_note_btn.addEventListener('click', make_textarea_visible)
 }
 cancel_btn.addEventListener('click', hide_textarea)
@@ -102,7 +110,10 @@ function add_to_note_content()
     note_title.textContent = lines[0]
     for (let line =1; line < lines.length; line++)
     {
-        note_body.push(line)
+        obj =lines[line];
+        note_body.push(obj);
+        console.log(note_body) 
+        
     }
     let new_note = {title: note_title, body: note_body}
     note_content.push(new_note)
