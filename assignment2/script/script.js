@@ -130,18 +130,20 @@ function click_note(e)
     {
         if (title === notes[index].innerText)
         {
-           let content = note_content[index]['body']
-            if (length.content >1)
+            text_area.value = ''
+            let all_content = note_content[index]['body']
+            if (index>=2)
             {
-                for (let item of content)
+                for (let item of all_content)
                 {
-                    text_area.value +='\n'+item +'\n'
+                    text_area.value += item +'\r\n'
                 }
             }
             else
-            text_area.value = content
-
+            {
+                text_area.value = all_content
             }
+        }
     }
     
 }
