@@ -82,17 +82,6 @@ function make_textarea_visible()
 }
 cancel_btn.addEventListener('click', make_textarea_visible)
 
-// function make_textarea_visible()
-// {
-//     text_area.style.visibility='visible'
-//     text_area.value = 'Add some note......'
-//     save_btn.style.visibility='visible'
-//     cancel_btn.style.visibility='visible'
-//     cancel_btn.addEventListener('click', make_textarea_visible)
-// }
-// new_note_btn.addEventListener('click', make_textarea_visible)
-
-
 let note1 = {title:"note one", body:"some text 1"} 
 let note2 = {title:"note two", body:"some text 2"} 
 let note_list = document.querySelector('.noteArray')
