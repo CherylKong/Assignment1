@@ -7,7 +7,7 @@ body{
     min-height:100%;
     padding:0;
     display: grid;
-    grid-template-rows: 10% 75% 15%;
+    grid-template-rows: 10% 80% 10%;
 }
 
 .heading
@@ -37,6 +37,7 @@ main
     position: relative;
     margin: 0.5em 0;
     padding-left:1rem;
+    flex: 0 0 auto;
 }
 
 div.new_note
@@ -81,7 +82,6 @@ div.new_note
 .hidden
 {
     visibility: hidden;
-    
 }
 
 .contain
@@ -104,21 +104,21 @@ div.new_note
     right:50%;
 }
 
-footer
+.footer
 {
-    display: grid;  
+    display: flex;  
+    flex-direction: column;
+    flex: 0 0 auto;
     background-color: #d9adad;
     height: 100%;
     text-align: center;
-    margin: 1rem 0;
-    font-size: 110%;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    
 }
-p.footer
+
+.footer p
 {
     margin-bottom: 0;
-    margin-top: 0.5rem;
-}
-p + footer
-{
-    grid-row: 2/3;
 }
