@@ -118,6 +118,27 @@ function add_to_note_content()
     let new_note = {title: note_title, body: note_body}
     note_content.push(new_note)
     note_list.appendChild(note_title)
+    click_note()
 }
 
+function click_note()
+{
+    for (let index in note_content())
+    {
+        let lst = document.querySelectorAll('li')[index]
+        let content = note_content[index]['body']
+        if (length.content >1)
+        {
+            content = ''
+            for (let item of content)
+            {
+                text_area.value += item +'\n'
+            }
+        }
+        else
+        text_area.value = content
+    }
+    
+}
 save_btn.addEventListener('click', add_to_note_content)
+
