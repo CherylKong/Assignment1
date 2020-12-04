@@ -40,6 +40,7 @@ function change_theme_text(theme_text)
     }
     return text
 }
+
 function change_theme(text,variable)
 {
     if (text === "Light Theme")
@@ -62,6 +63,7 @@ function change_theme(text,variable)
     }
     dark_theme_btn.addEventListener('click',change_dark_theme)
 }
+
 function change_font_color_to_white(posiiton, color)
 {
     posiiton.style.color = color
@@ -69,32 +71,26 @@ function change_font_color_to_white(posiiton, color)
 
 dark_theme_btn.addEventListener('click',change_dark_theme)
 
-function hide_textarea()
-{
-    text_area.style.visibility='hidden'
-    save_btn.style.visibility='hidden'
-    cancel_btn.style.visibility='hidden'
-}
-cancel_btn.addEventListener('click', hide_textarea)
-
-function hide_textarea()
-{
-    text_area.style.visibility='hidden'
-    save_btn.style.visibility='hidden'
-    cancel_btn.style.visibility='hidden'
-    new_note_btn.addEventListener('click', make_textarea_visible)
-}
-cancel_btn.addEventListener('click', hide_textarea)
 
 function make_textarea_visible()
 {
-    text_area.style.visibility='visible'
-    text_area.value = 'Add some note......'
-    save_btn.style.visibility='visible'
-    cancel_btn.style.visibility='visible'
-    cancel_btn.addEventListener('click', hide_textarea)
+    text_area.classList.toggle('hidden')
+    save_btn.classList.toggle('hidden')
+    cancel_btn.classList.toggle('hidden')
+    text_area.value = 'add some new notes...'
+    new_note_btn.addEventListener('click', make_textarea_visible)
 }
-new_note_btn.addEventListener('click', make_textarea_visible)
+cancel_btn.addEventListener('click', make_textarea_visible)
+
+// function make_textarea_visible()
+// {
+//     text_area.style.visibility='visible'
+//     text_area.value = 'Add some note......'
+//     save_btn.style.visibility='visible'
+//     cancel_btn.style.visibility='visible'
+//     cancel_btn.addEventListener('click', make_textarea_visible)
+// }
+// new_note_btn.addEventListener('click', make_textarea_visible)
 
 
 let note1 = {title:"note one", body:"some text 1"} 
@@ -112,12 +108,40 @@ function add_to_note_content()
     {
         obj =lines[line];
         note_body.push(obj);
-        console.log(note_body) 
         
     }
     let new_note = {title: note_title, body: note_body}
     note_content.push(new_note)
     note_list.appendChild(note_title)
+    text_area.value = 'Add some note......'
 }
-
 save_btn.addEventListener('click', add_to_note_content)
+
+let lst = document.querySelector('.noteArray')
+function click_note(e)
+{
+    let title = e.target.innerText
+    let notes = document.querySelectorAll('li')
+    for (let index in notes)
+    {
+        if (title === notes[index].innerText)
+        {
+            text_area.value = ''
+            let all_content = note_content[index]['body']
+            if (index>=2)
+            {
+                for (let item of all_content)
+                {
+                    text_area.value += item +'\r\n'
+                }
+            }
+            else
+            {
+                text_area.value = all_content
+            }
+        }
+    }
+    
+}
+lst.addEventListener('click',click_note)
+

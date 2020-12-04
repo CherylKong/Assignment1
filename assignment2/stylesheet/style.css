@@ -78,6 +78,12 @@ div.new_note
     left:50%;
 }
 
+.hidden
+{
+    visibility: hidden;
+    
+}
+
 .contain
 {
     background-color: white;
