@@ -112,33 +112,38 @@ function add_to_note_content()
     {
         obj =lines[line];
         note_body.push(obj);
-        console.log(note_body) 
         
     }
     let new_note = {title: note_title, body: note_body}
     note_content.push(new_note)
     note_list.appendChild(note_title)
-    click_note()
+    text_area.value = 'Add some note......'
 }
+save_btn.addEventListener('click', add_to_note_content)
 
-function click_note()
+let lst = document.querySelector('.noteArray')
+function click_note(e)
 {
-    for (let index in note_content())
+    let title = e.target.innerText
+    let notes = document.querySelectorAll('li')
+    for (let index in notes)
     {
-        let lst = document.querySelectorAll('li')[index]
-        let content = note_content[index]['body']
-        if (length.content >1)
+        if (title === notes[index].innerText)
         {
-            content = ''
-            for (let item of content)
+           let content = note_content[index]['body']
+            if (length.content >1)
             {
-                text_area.value += item +'\n'
+                for (let item of content)
+                {
+                    text_area.value +='\n'+item +'\n'
+                }
             }
-        }
-        else
-        text_area.value = content
+            else
+            text_area.value = content
+
+            }
     }
     
 }
-save_btn.addEventListener('click', add_to_note_content)
+lst.addEventListener('click',click_note)
 
